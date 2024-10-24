@@ -47,7 +47,7 @@ function displayMessage(sender, message) {
 
 // Function to call OpenAI's API using fetch
 async function getOpenAIResponse(messages) {
-    const API_KEY = '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'; // Replace with your actual API key
+    const API_KEY = 'insert API Key here'; // Replace with your actual API key
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     const body = {
