@@ -47,7 +47,7 @@ function displayMessage(sender, message) {
 
 // Function to call OpenAI's API using fetch
 async function getOpenAIResponse(messages) {
-    const API_KEY = 'insert API Key here'; // Replace with your actual API key
+    const API_KEY = 'API-KEY-HERE'; // Replace with your actual API key
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     const body = {
@@ -79,7 +79,7 @@ async function getOpenAIResponse(messages) {
         }
 
         const data = await response.json();
-        return data.choices[0].message.content;
+        return data.choices[0].message['content'];
     } catch (error) {
         console.error("Error with OpenAI API:", error);
         return `Sorry, something went wrong: ${error.message}. Please try again.`;
