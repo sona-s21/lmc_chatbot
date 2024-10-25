@@ -110,3 +110,28 @@ button:hover {
 .background .stars {
     z-index: 1; /* Keep stars behind the chatbot */
 }
+
+.slasher-container {
+    position: absolute;
+    bottom: 20%; /* Position above the bottom */
+    left: 10%; /* Position from the left side */
+    width: 50px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    z-index: 5; /* Ensure it's above the stars but below the chatbot */
+}
+
+.slasher {
+    width: 150px;
+    height: auto; /* Scale with the container */
+    animation: sway 2s infinite alternate; /* Optional sway animation */
+}
+
+/* Optional sway animation */
+@keyframes sway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px); /* Slight side-to-side movement */
+    }
+}
