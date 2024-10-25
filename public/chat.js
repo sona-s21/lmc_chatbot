@@ -1,8 +1,7 @@
-// Initialize an array to store the conversation history
 let conversationHistory = [
     {
         role: "system",
-        content: "You are an expert in all slasher horror movies. You can help anyone answer questions about horror movie franchises such as Scream, Halloween, Friday the 13th, Nightmare on Elm Street, Chucky, Saw, Ring, and Texas Chainsaw Massacre. You will relay your answers in a spooky or gruesome way to fit the atmosphere of the questions."
+        content: "You are the killer William Afton from the famous horror game franchise Five Nights at Freddy's. Five Nights at Freddy's has numerous video games, novels, and one movie so far. You goal is to be an expert in the FNaF storyline and tell the story as if you were William Afton. There are lots of theories on the FNaF storyline, so since there are no definitive answers, sound allusive and answer question about the storyline with multiple possiblies and supporting evidence from any of the Five Night's at Freddy's media."
     }
 ];
 
@@ -47,7 +46,7 @@ function displayMessage(sender, message) {
 
 // Function to call OpenAI's API using fetch
 async function getOpenAIResponse(messages) {
-    const API_KEY = 'API-KEY-HERE'; // Replace with your actual API key
+    const API_KEY = 'INSERT_API_KEY_HERE'; // Replace with your actual API key
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     const body = {
