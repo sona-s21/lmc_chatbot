@@ -25,6 +25,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside the container */
     z-index: 10; /* Ensure chatbot is above the background */
 }
 
@@ -58,7 +59,7 @@ body {
 
 button {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #f59922;
     color: white;
     border: none;
     border-radius: 5px;
