@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #210236, #280341, #6a0dad); /* Purple background for spooky theme */
+    overflow: hidden; /* Prevent scroll bars from showing */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flex to center the chatbot container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+#chatbot-container {
+    background-color: white;
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside the container */
+    z-index: 10; /* Ensure chatbot is above the background */
+}
+
+#chatbox {
+    border: 1px solid #ccc;
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+#input-area {
+    display: flex;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #f59922;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Spooky background elements */
+.moon {
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    background-color: #f0e68c; /* Moon color */
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(240, 230, 140, 0.7);
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="0.5" fill="white"/><circle cx="20" cy="20" r="0.5" fill="white"/><circle cx="30" cy="5" r="0.5" fill="white"/><circle cx="40" cy="30" r="0.5" fill="white"/><circle cx="70" cy="50" r="0.5" fill="white"/><circle cx="80" cy="70" r="0.5" fill="white"/><circle cx="90" cy="20" r="0.5" fill="white"/></svg>') repeat;
+    animation: shimmer 1.5s infinite alternate;
+}
+
+.star {
+    filter: blur(1px); /* Softens the edges for a glowing effect */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.904), 0 0 10px rgba(255, 255, 255, 0.5); /* Glow effect */
+}
+
+@keyframes shimmer {
+    0% {
+        opacity: 0.7; /* Start slightly transparent */
+    }
+    50% {
+        opacity: 1; /* Fully opaque */
+    }
+    100% {
+        opacity: 0.7; /* Return to slightly transparent */
+    }
+}
+
+.background .stars {
+    z-index: 1; /* Keep stars behind the chatbot */
+}
+
+.slasher-container {
+    position: absolute;
+    bottom: 20%; /* Position above the bottom */
+    left: 10%; /* Position from the left side */
+    width: 50px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    z-index: 5; /* Ensure it's above the stars but below the chatbot */
+}
+
+.slasher {
+    width: 150px;
+    height: auto; /* Scale with the container */
+    animation: sway 2s infinite alternate; /* Optional sway animation */
+}
+
+/* Optional sway animation */
+@keyframes sway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px); /* Slight side-to-side movement */
+    }
+}
