@@ -44,9 +44,24 @@ function displayMessage(sender, message) {
     document.getElementById('messages').appendChild(messageContainer);
 }
 
-// Function to call OpenAI's API using fetch
+let API_KEY = ''; // Initialize with an empty string
+
+function setApiKey() {
+    const apiKeyInput = document.getElementById('api-key-input').value;
+    if (apiKeyInput.trim() !== '') {
+        API_KEY = apiKeyInput;
+        document.getElementById('api-key-prompt').style.display = 'none'; // Hide the prompt once API key is saved
+        alert("API key saved successfully!");
+    } else {
+        alert("Please enter a valid API key.");
+    }
+}
+
 async function getOpenAIResponse(messages) {
-    const API_KEY = 'INSERT_API_KEY_HERE'; // Replace with your actual API key
+    if (!API_KEY) {
+        return "API key is not set. Please refresh the page and enter a valid API key.";
+    }
+
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     const body = {
